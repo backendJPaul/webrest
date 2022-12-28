@@ -22,13 +22,19 @@ export class UserService{
     }
 
     fetchAll(){
-        fetch(this.#url)
-            .then(response => response.json())
-            .then(data => console.log(data));
-/*
-        console.log(this.#usersArray);
-        console.log(this.#usersArray[3].getName());
 
- */
+        var request = new XMLHttpRequest();
+        request.open('GET', 'https://dfaa-2800-200-eb60-1be9-50d2-27bb-efb8-d798.ngrok.io/user', true);
+
+        request.send();
+
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                var respuesta = request.responseText;
+                console.log(respuesta);
+            } else {
+                console.error('Error al obtener los recursos');
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 import {UserService} from './modules/UserService.js'
 
-const userService = new UserService("https://jsonplaceholder.typicode.com/todos/");
+const userService = new UserService("https://dfaa-2800-200-eb60-1be9-50d2-27bb-efb8-d798.ngrok.io/user");
 userService.fetchAll();
 
 
